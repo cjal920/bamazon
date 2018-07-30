@@ -21,6 +21,9 @@ connection.connect(function(err) {
   showProducts();
 });
 
+// Running this application will first display all of the items available for sale. 
+// Include the ids, names, and prices of products for sale.
+
 function showProducts() {
   connection.query("SELECT * FROM products", function(err, res) {
     for (var i = 0; i < res.length; i++) {
@@ -29,6 +32,12 @@ function showProducts() {
     console.log("-----------------------------------");
   });
 }
+
+// The app should then prompt users with two messages.
+
+
+// The first should ask them the ID of the product they would like to buy.
+
 
 function selectProduct()  {
     inquirer    
@@ -41,6 +50,9 @@ function selectProduct()  {
 
 }
 
+
+// The second message should ask how many units of the product they would like to buy.
+
 function selectUnits()    {
 
 }
@@ -50,15 +62,6 @@ function selectUnits()    {
   // console.log(query.sql);
 
 
-// Running this application will first display all of the items available for sale. 
-// Include the ids, names, and prices of products for sale.
-
-
-// The app should then prompt users with two messages.
-
-
-// The first should ask them the ID of the product they would like to buy.
-// The second message should ask how many units of the product they would like to buy.
 
 // Once the customer has placed the order, your application should check if your store has enough of the product to meet the customer's request.
 
