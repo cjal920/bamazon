@@ -1,73 +1,40 @@
+// Require NPM packages
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 
+// Setup connection to SQL server
 var connection = mysql.createConnection({
-  host: "localhost",
-
-  // Your port; if not 3306
-  port: 8889,
-
-  // Your username
-  user: "root",
-
-  // Your password
-  password: "root",
-  database: "bamazon_db"
+    host: "localhost",
+    port: 8889,
+    user: "root",
+    password: "root",
+    database: "bamazon_db"
 });
 
+// Set counter for total number of products
+var numberOfProductTypes = 0;
+
+// Connect to DB
 connection.connect(function(err) {
-  if (err) throw err;
-  console.log("connected as id " + connection.threadId);
-  showProducts();
+    // Throw error if it errors
+    if (err) throw err;
+    console.log("-------------------------------------------------------------------------------")
+    console.log("Shop Bamazon! We're bamazing!")
+    console.log("-------------------------------------------------------------------------------")
+    queryProducts();
 });
 
-// Running this application will first display all of the items available for sale. 
-// Include the ids, names, and prices of products for sale.
-
-function showProducts() {
+function queryProducts()  {
   connection.query("SELECT * FROM products", function(err, res) {
-    for (var i = 0; i < res.length; i++) {
-      console.log(res[i].item_id + " | " + res[i].product_name + " | " + res[i].department_name + " | " + res[i].price + " | " + res[i].stock_quantity);
+    for (var i = 0; i < res.length; i++)  {
+      console.log("Item ID: " + res[i].item_id + " || Department: " + res[i].department_name + " || Product Name: " + res[i].product_name + " || Price: $" + res[i].price);
     }
-    console.log("-----------------------------------");
+    console.log("-------------------------------------------------------------------------------")
+    selectProduct();  
   });
-}
-
-// The app should then prompt users with two messages.
-
-
-// The first should ask them the ID of the product they would like to buy.
-
-
-function selectProduct()  {
-    inquirer    
-        .prompt({
-            name: "",
-            type: "",
-            message: "",
-            
-        })
-
-}
-
-
-// The second message should ask how many units of the product they would like to buy.
-
-function selectUnits()    {
-
-}
-
-
-  // logs the actual query being run
-  // console.log(query.sql);
+};
 
 
 
-// Once the customer has placed the order, your application should check if your store has enough of the product to meet the customer's request.
 
-// If not, the app should log a phrase like "Insufficient quantity!", and then prevent the order from going through.
 
-// However, if your store does have enough of the product, you should fulfill the customer's order.
-
-// This means updating the SQL database to reflect the remaining quantity.
-// Once the update goes through, show the customer the total cost of their purchase.
