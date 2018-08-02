@@ -1,8 +1,6 @@
-// Require NPM packages
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 
-// Setup connection to SQL server
 var connection = mysql.createConnection({
     host: "localhost",
     port: 8889,
@@ -11,12 +9,9 @@ var connection = mysql.createConnection({
     database: "bamazon_db"
 });
 
-// Set counter for total number of products
 var numberOfProductTypes = 0;
 
-// Connect to DB
 connection.connect(function(err) {
-    // Throw error if it errors
     if (err) throw err;
     console.log("-------------------------------------------------------------------------------")
     console.log("Shop Bamazon! We're bamazing!")
