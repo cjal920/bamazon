@@ -8,6 +8,9 @@ In order to purchase products, Bamazon requires the installation of the followin
 
 Shoppers are prompted to select an item for purchase from the following list of items stored in a .sql database:
 
+![screen shot 2018-08-03 at 6 50 48 pm](https://user-images.githubusercontent.com/36335073/43669415-ccefaa3a-9750-11e8-897c-79beaa431320.png)
+
+
 
 
 
