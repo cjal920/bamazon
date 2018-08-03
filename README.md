@@ -20,3 +20,7 @@ Once the ID and quantity of the product have been selected, shoppers are shown t
 
 
 
+
+
+
+Happy Shopping!
