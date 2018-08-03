@@ -4,7 +4,7 @@ CREATE DATABASE bamazon_db;
 USE bamazon_db;
 
 CREATE TABLE products (
-  item_id INT NOT NULL AUTO_INCREMENT,
+  item_id INT NOT NULL,
   product_name VARCHAR(100) NOT NULL,
   department_name VARCHAR(45) NOT NULL,
   price DECIMAL(10,2) NOT NULL,
@@ -16,28 +16,28 @@ INSERT INTO products (item_id, product_name, department_name, price, stock_quant
 VALUES (1, "Master of the Senate", "Books", 29.95, 11);
 
 INSERT INTO products (item_id, product_name, department_name, price, stock_quantity)
-VALUES (2, "Lawrence of Arabia", "Movies", 11.99, 17);
+VALUES (10, "Lawrence of Arabia", "Movies", 11.99, 17);
 
 INSERT INTO products (item_id, product_name, department_name, price, stock_quantity)
-VALUES (3, "Taco Shells", "Food", 3.24, 202);
+VALUES (11, "Taco Shells", "Food", 3.24, 202);
 
 INSERT INTO products (item_id, product_name, department_name, price, stock_quantity)
-VALUES (4, "Ottoman", "Furniture", 449.99, 12);
+VALUES (100, "Ottoman", "Furniture", 449.99, 12);
 
 INSERT INTO products (item_id, product_name, department_name, price, stock_quantity)
-VALUES (5, "Baseball Bat", "Sports", 28.75, 74);
+VALUES (101, "Baseball Bat", "Sports", 28.75, 74);
 
 INSERT INTO products (item_id, product_name, department_name, price, stock_quantity)
-VALUES (6, "Easel", "Art Supplies", 35.95, 23);
+VALUES (110, "Easel", "Art Supplies", 35.95, 23);
 
 INSERT INTO products (item_id, product_name, department_name, price, stock_quantity)
-VALUES (7, "Shower Curtain", "Bath", 12.99, 68);
+VALUES (111, "Shower Curtain", "Bath", 12.99, 68);
 
 INSERT INTO products (item_id, product_name, department_name, price, stock_quantity)
-VALUES (8, "Donkey Kong", "Video Games", 17.49, 25);
+VALUES (1000, "Donkey Kong", "Video Games", 17.49, 25);
 
 INSERT INTO products (item_id, product_name, department_name, price, stock_quantity)
-VALUES (9, "Fancy Feast", "Pet Food", 3.24, 55);
+VALUES (1001, "Fancy Feast", "Pet Food", 3.24, 55);
 
 INSERT INTO products (item_id, product_name, department_name, price, stock_quantity)
-VALUES (10, "Ab Roller", "Fitness", 11.99, 19);
+VALUES (1010, "Ab Roller", "Fitness", 11.99, 19);
