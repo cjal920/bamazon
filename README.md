@@ -1,4 +1,5 @@
 # Welcome to Bamazon! 
+# WHERE THE SAVINGS ARE BAMAZING!
 
 
 In order to purchase products, Bamazon requires the installation of the following npm packages:
